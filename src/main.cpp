@@ -985,7 +985,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan = 8 * 60;  // 16 min
+static const int64_t nTargetTimespan = 8 * 60;  // 8 min
 
 //
 // maximum nBits value could possible be required nTime after
@@ -2519,7 +2519,7 @@ bool LoadBlockIndex(bool fAllowNew)
         txNew.nTime = 1399690599;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
-        txNew.vin[0].scriptSig = CScript() << 125125512 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].SetEmpty();
         CBlock block;
         block.vtx.push_back(txNew);
@@ -2553,7 +2553,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 
         // Print Stake Modifier Checkpoint
-        //printf("Stake checkpoint: %x\n", pindexBest->nStakeModifierChecksum);
+        printf("Stake checkpoint: %x\n", pindexBest->nStakeModifierChecksum);
         // debug print
         block.print();
         printf("block.GetHash() == %s\n", block.GetHash().ToString().c_str());
