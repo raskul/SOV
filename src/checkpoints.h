@@ -8,8 +8,6 @@
 #include "net.h"
 #include "util.h"
 
-#define CHECKPOINT_MAX_SPAN (60 * 60) // max 1 hour before latest block
-
 #ifdef WIN32
 #undef STRICT
 #undef PERMISSIVE
@@ -61,7 +59,6 @@ namespace Checkpoints
     bool SetCheckpointPrivKey(std::string strPrivKey);
     bool SendSyncCheckpoint(uint256 hashCheckpoint);
     bool IsMatureSyncCheckpoint();
-    bool IsSyncCheckpointTooOld(unsigned int nSeconds);
 }
 
 // ppcoin: synchronized checkpoint
