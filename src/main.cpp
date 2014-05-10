@@ -985,7 +985,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan = 8 * 60;  // 8 min
+static const int64_t nTargetTimespan = 8 * 60;  // 8 mins
 
 //
 // maximum nBits value could possible be required nTime after
@@ -2553,7 +2553,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 
         // Print Stake Modifier Checkpoint
-        printf("Stake checkpoint: %x\n", pindexBest->nStakeModifierChecksum);
+        //printf("Stake checkpoint: %x\n", pindexBest->nStakeModifierChecksum);
         // debug print
         block.print();
         printf("block.GetHash() == %s\n", block.GetHash().ToString().c_str());
