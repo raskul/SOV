@@ -19,7 +19,7 @@
 using namespace std;
 using namespace boost;
 
-const bool IsCalculatingGenesisBlockHash = true;
+const bool IsCalculatingGenesisBlockHash = false;
 
 //
 // Global state
@@ -2580,7 +2580,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return error("LoadBlockIndex() : failed to init sync checkpoint");
     }
 
-    string strPubKey = "";
+    string strPubKey = "04563922ee0bc1075f2bd3f8947298832cd8754bdfa6f7428f68bc495102a2076ef37e3e393be202b6b858f80fccb3b9010075acf34344066c68512f0e62b283bd";
 
     // if checkpoint master key changed must reset sync-checkpoint
     if (!txdb.ReadCheckpointPubKey(strPubKey) || strPubKey != CSyncCheckpoint::strMasterPubKey)
