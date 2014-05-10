@@ -9,6 +9,9 @@
 
 using namespace std;
 
+extern unsigned int nStakeMaxAge;
+extern unsigned int nTargetSpacing;
+
 typedef std::map<int, unsigned int> MapModifierCheckpoints;
 
 // Hard checkpoints of stake modifiers to ensure they are deterministic
