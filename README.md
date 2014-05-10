@@ -1,2 +1,2 @@
-SOV
+Sovereigns (SOV)
 ===
