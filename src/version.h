@@ -1,8 +1,8 @@
-// Copyright (c) 2012 The Bitcoin developers
+// Copyright (c) 2013 The Sovereign developer
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_VERSION_H
-#define BITCOIN_VERSION_H
+#ifndef BOUNTYCOIN_VERSION_H
+#define BOUNTYCOIN_VERSION_H
 
 #include "clientversion.h"
 #include <string>
@@ -22,15 +22,10 @@ extern const std::string CLIENT_BUILD;
 extern const std::string CLIENT_DATE;
 
 //
-// database format versioning
-//
-static const int DATABASE_VERSION = 70508;
-
-//
 // network protocol versioning
 //
 
-static const int PROTOCOL_VERSION = 60000;
+static const int PROTOCOL_VERSION = 60006;
 
 // earlier versions not supported as of Feb 2012, and are disconnected
 static const int MIN_PROTO_VERSION = 209;
@@ -41,12 +36,17 @@ static const int CADDR_TIME_VERSION = 31402;
 
 // only request blocks from nodes outside this range of versions
 static const int NOBLKS_VERSION_START = 60002;
-static const int NOBLKS_VERSION_END = 60009;
+static const int NOBLKS_VERSION_END = 60004;
 
 // BIP 0031, pong message, is enabled for all versions AFTER this one
 static const int BIP0031_VERSION = 60000;
 
 // "mempool" command, enhanced "getdata" behavior starts with this version:
 static const int MEMPOOL_GD_VERSION = 60002;
+
+#define DISPLAY_VERSION_MAJOR       1
+#define DISPLAY_VERSION_MINOR       0
+#define DISPLAY_VERSION_REVISION    0
+#define DISPLAY_VERSION_BUILD       1
 
 #endif
